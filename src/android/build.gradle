@@ -19,7 +19,6 @@ repositories {
     }
 }
 
-/*
 dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.4@aar'
     compile 'com.google.firebase:firebase-auth:+'
@@ -28,6 +27,7 @@ dependencies {
     }
 }
 
+/*
 cdvPluginPostBuildExtras.add({
     apply plugin: 'com.google.gms.google-services'
     apply plugin: 'io.fabric'
