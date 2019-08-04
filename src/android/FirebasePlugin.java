@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.iid.FirebaseInstanceId;
+//import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
@@ -122,9 +122,9 @@ public class FirebasePlugin extends CordovaPlugin {
         } else if (action.equals("onNotificationOpen")) {
             this.onNotificationOpen(callbackContext);
             return true;
-        } else if (action.equals("onTokenRefresh")) {
-            this.onTokenRefresh(callbackContext);
-            return true;
+       // } else if (action.equals("onTokenRefresh")) {
+       //     this.onTokenRefresh(callbackContext);
+       //     return true;
         } else if (action.equals("logEvent")) {
             this.logEvent(callbackContext, args.getString(0), args.getJSONObject(1));
             return true;
@@ -241,6 +241,7 @@ public class FirebasePlugin extends CordovaPlugin {
         }
     }
 
+    /*    
     private void onTokenRefresh(final CallbackContext callbackContext) {
         FirebasePlugin.tokenRefreshCallbackContext = callbackContext;
 
@@ -258,6 +259,7 @@ public class FirebasePlugin extends CordovaPlugin {
             }
         });
     }
+    */
 
     public static void sendNotification(Bundle bundle, Context context) {
         if (!FirebasePlugin.hasNotificationsCallback()) {
@@ -321,15 +323,16 @@ public class FirebasePlugin extends CordovaPlugin {
     }
 
     // DEPRECTED - alias of getToken
+    
     private void getInstanceId(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                try {
-                    String token = FirebaseInstanceId.getInstance().getToken();
-                    callbackContext.success(token);
-                } catch (Exception e) {
-                    callbackContext.error(e.getMessage());
-                }
+                //try {
+                //    String token = FirebaseInstanceId.getInstance().getToken();
+                //    callbackContext.success(token);
+                //} catch (Exception e) {
+                //    callbackContext.error(e.getMessage());
+                //}
             }
         });
     }
@@ -337,13 +340,13 @@ public class FirebasePlugin extends CordovaPlugin {
     private void getId(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                try {
-                    String id = FirebaseInstanceId.getInstance().getId();
-                    callbackContext.success(id);
-                } catch (Exception e) {
-                    Crashlytics.logException(e);
-                    callbackContext.error(e.getMessage());
-                }
+                //try {
+                //    String id = FirebaseInstanceId.getInstance().getId();
+                //    callbackContext.success(id);
+                //} catch (Exception e) {
+                //    Crashlytics.logException(e);
+                //    callbackContext.error(e.getMessage());
+                //}
             }
         });
     }
@@ -351,17 +354,17 @@ public class FirebasePlugin extends CordovaPlugin {
     private void getToken(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                try {
-                    String token = FirebaseInstanceId.getInstance().getToken();
-                    callbackContext.success(token);
-                } catch (Exception e) {
-                    Crashlytics.logException(e);
-                    callbackContext.error(e.getMessage());
-                }
+                //try {
+                //    String token = FirebaseInstanceId.getInstance().getToken();
+                //    callbackContext.success(token);
+                //} catch (Exception e) {
+                //    Crashlytics.logException(e);
+                //    callbackContext.error(e.getMessage());
+                //}
             }
         });
     }
-
+*/
     private void hasPermission(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
@@ -445,13 +448,13 @@ public class FirebasePlugin extends CordovaPlugin {
     private void unregister(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                try {
-                    FirebaseInstanceId.getInstance().deleteInstanceId();
-                    callbackContext.success();
-                } catch (Exception e) {
-                    Crashlytics.logException(e);
-                    callbackContext.error(e.getMessage());
-                }
+               // try {
+               //     FirebaseInstanceId.getInstance().deleteInstanceId();
+               //     callbackContext.success();
+               // } catch (Exception e) {
+                //    Crashlytics.logException(e);
+                //    callbackContext.error(e.getMessage());
+                //}
             }
         });
     }
