@@ -364,7 +364,7 @@ public class FirebasePlugin extends CordovaPlugin {
             }
         });
     }
-*/
+
     private void hasPermission(final CallbackContext callbackContext) {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
