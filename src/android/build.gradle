@@ -19,6 +19,7 @@ repositories {
     }
 }
 
+/*
 dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.4@aar'
     compile 'com.google.firebase:firebase-auth:+'
@@ -46,3 +47,4 @@ buildscript {
 
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
+*/
